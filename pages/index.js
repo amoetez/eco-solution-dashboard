@@ -9,7 +9,7 @@ import { LayoutContext } from '../layout/context/layoutcontext';
 import { InputText } from 'primereact/inputtext';
 import { classNames } from 'primereact/utils';
 import Cookies from 'js-cookie';
-
+import axios from 'axios';
 const LoginPage = () => {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -19,20 +19,27 @@ const LoginPage = () => {
     const router = useRouter();
     const containerClassName = classNames('surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden', { 'p-input-filled': layoutConfig.inputStyle === 'filled' });
     const onLogin = async () => {
-        const response = await fetch('http://localhost:5050/admin/login', {
-            method: 'POST',
-            body: JSON.stringify({ email, password }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials:'include'
-        });
-        console.log(response);
-        if (response.ok) {
-            Cookies.set('authenticated', 'true');
-            router.push('/articles');
-        }
-    }
+        // const response = await fetch('http://localhost:5050/admin/login', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ email, password }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     credentials: 'include'
+        // });
+        axios
+            .post('http://localhost:5050/admin/login', { email, password })
+            .then((res) => {
+                console.log(res);
+                if (res.data === 'Success') {
+                    Cookies.set('authenticated', 'true');
+                    router.push('/articles');
+                }
+            })
+            .catch((err) => {
+                alert('wrong credentials');
+            });
+    };
 
     return (
         <div className={containerClassName}>
@@ -55,7 +62,7 @@ const LoginPage = () => {
                             <label htmlFor="password1" className="block text-900 font-medium text-xl mb-2">
                                 Password
                             </label>
-                        <Password inputid="password1" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" toggleMask className="w-full mb-5" inputClassName='w-full p-3 md:w-30rem'></Password>
+                            <Password inputid="password1" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" toggleMask className="w-full mb-5" inputClassName="w-full p-3 md:w-30rem"></Password>
 
                             {/* <div className="flex align-items-center justify-content-between mb-5 gap-5"> */}
                             {/*     <div className="flex align-items-center"> */}
