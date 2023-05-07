@@ -14,7 +14,7 @@ const FormIndicateurPage = () => {
 
 
 
-    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://localhost:5050/';
+    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://51.75.207.131:5050/';
 
     useEffect(() => {
 
@@ -49,7 +49,7 @@ const FormIndicateurPage = () => {
 
         try {
             if (regexFloat.test(indicateurPuissance) && regexFloat.test(indicateurCarbone) && regexInt.test(indicateurNombreDeProjet)) {
-                const response = await fetch('http://localhost:5050/indicateur/update/' + _id, {
+                const response = await fetch('http://51.75.207.131:5050/indicateur/update/' + _id, {
                     method: 'PUT',
                     body: JSON.stringify(indicateur),
                     credentials: 'include',

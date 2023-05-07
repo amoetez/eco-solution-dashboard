@@ -148,7 +148,7 @@ const FormLayoutDemo = () => {
 
         try {
             if (images.length !== 0 && titre !== '' && adresse !== '' && description !== '' && productionAnuelle !== '' && type !== null && video !== null) {
-                const response = await fetch('http://localhost:5050/projet/ajouter_projet', {
+                const response = await fetch('http://51.75.207.131:5050/projet/ajouter_projet', {
                     method: 'POST',
                     body: formData,
                     credentials: 'include'

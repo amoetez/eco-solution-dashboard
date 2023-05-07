@@ -174,7 +174,7 @@ const cancelOptions = { icon: 'pi pi-fw pi-times', iconOnly: true, className: 'c
 
         try {
             if (titre !== '' && adresse !== '' && description !== '' && productionAnuelle !== '' && type !== null ) {
-                const response = await fetch('http://localhost:5050/projet/update/' + _id, {
+                const response = await fetch('http://51.75.207.131:5050/projet/update/' + _id, {
                     method: 'PUT',
                     body: formData,
                     credentials: 'include'

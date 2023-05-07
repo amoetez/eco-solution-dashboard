@@ -8,7 +8,7 @@ const PanelDemo = () => {
     const router = useRouter();
     const menu1 = useRef(null);
     const [articleCardsContent, setArticleCardsContent] = useState([]);
-    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://localhost:5050/';
+    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://51.75.207.131:5050/';
 
     useEffect(() => {
         fetch(PROTOCOLANDHOSTNAMEPARTOFTHEURL + 'articles')

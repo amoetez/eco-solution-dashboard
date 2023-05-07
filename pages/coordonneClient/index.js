@@ -22,7 +22,7 @@ export default function BasicFilterDemo() {
 
 
     useEffect(() => {
-        fetch('http://localhost:5050/coordonneClient').then((response) =>
+        fetch('http://51.75.207.131:5050/coordonneClient').then((response) =>
             response.json()).then((data) => {
                 console.log(data);
                 setContactsInfo(data);

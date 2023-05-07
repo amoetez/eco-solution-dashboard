@@ -12,7 +12,7 @@ const AppMenu = () => {
     const { layoutConfig } = useContext(LayoutContext);
     const contextPath = getConfig().publicRuntimeConfig.contextPath;
     const handleLogout = async () => {
-        const response = await fetch('http://localhost:5050/admin/logout', {
+        const response = await fetch('http://51.75.207.131:5050/admin/logout', {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify({}),

@@ -136,7 +136,7 @@ const FormLayoutDemo = ({ data }) => {
 
         try {
             if (description !== '' && titre !== '' && contenu !== '') {
-                const response = await fetch('http://localhost:5050/article/update/' + _id, {
+                const response = await fetch('http://51.75.207.131:5050/article/update/' + _id, {
                     method: 'PUT',
                     body: formData,
                     credentials: 'include'

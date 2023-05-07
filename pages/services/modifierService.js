@@ -133,7 +133,7 @@ const cancelOptions = { icon: 'pi pi-fw pi-times', iconOnly: true, className: 'c
 
         try {
             if(description!=='' && titre!==''){
-            const response = await fetch('http://localhost:5050/service/update/'+_id,
+            const response = await fetch('http://51.75.207.131:5050/service/update/'+_id,
             {
                     method:'PUT',
                     body:formData,

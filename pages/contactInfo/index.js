@@ -11,7 +11,7 @@ const FormLayoutDemo = () => {
    
     
     
-    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://localhost:5050/';
+    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://51.75.207.131:5050/';
    
     useEffect(() => {
         
@@ -52,7 +52,7 @@ const FormLayoutDemo = () => {
         
         try {
            
-            const response = await fetch('http://localhost:5050/contactInfo/update/' + _id, {
+            const response = await fetch('http://51.75.207.131:5050/contactInfo/update/' + _id, {
                 method: 'PUT',
                 body: JSON.stringify(contactInfo),
                 credentials: 'include',

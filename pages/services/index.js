@@ -20,7 +20,7 @@ const PanelDemo = () => {
     const router = useRouter();
     const menu1 = useRef(null);
     const [serviceCardsContent, setServiceCardsContent] = useState([]);
-    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://localhost:5050/';
+    const PROTOCOLANDHOSTNAMEPARTOFTHEURL = 'http://51.75.207.131:5050/';
 
     useEffect(() => {
         fetch(PROTOCOLANDHOSTNAMEPARTOFTHEURL + 'services')
